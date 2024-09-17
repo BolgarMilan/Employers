@@ -42,6 +42,7 @@ namespace Employers
                 Console.Write(item.nev + " ");
             }
             Console.WriteLine();
+            Console.WriteLine();
 
             //4. feladat
             int legnagyobb = 0;
@@ -51,8 +52,8 @@ namespace Employers
                 {
                     legnagyobb = item.kereset;
                 }
-                Console.WriteLine($"{item.nev} {legnagyobb}");
             }
+            Console.WriteLine($"{legnagyobb}");
             Console.WriteLine();
 
             //5. feladat
