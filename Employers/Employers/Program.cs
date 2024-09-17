@@ -37,6 +37,7 @@ namespace Employers
             sr.Close();
 
             //3. feladat
+            Console.WriteLine("1. feladat: Dolgozók nevi:");
             foreach (var item in tulajdonsag)
             {
                 Console.Write(item.nev + " ");
@@ -45,18 +46,20 @@ namespace Employers
             Console.WriteLine();
 
             //4. feladat
-            int legnagyobb = 0;
-            foreach (var item in tulajdonsag)
+            Console.WriteLine("2. feladat: Legtöbbet kereső azononsítója és keresete");
+            Tulajdonsagok legnagyobb = tulajdonsag[0];
+            for (int i = 0; i < tulajdonsag.Count; i++)
             {
-                if (item.kereset > legnagyobb)
+                if (tulajdonsag[i].kereset > legnagyobb.kereset)
                 {
-                    legnagyobb = item.kereset;
+                    legnagyobb = tulajdonsag[i];
                 }
             }
-            Console.WriteLine($"{legnagyobb}");
+            Console.WriteLine($"{legnagyobb.azon} {legnagyobb.nev}");
             Console.WriteLine();
 
             //5. feladat
+            Console.WriteLine("3. feladat: 10 évre van a nyugdíjól");
             foreach (var item in tulajdonsag)
             {
                 if (65 - 10 == item.kor)
@@ -67,6 +70,7 @@ namespace Employers
             Console.WriteLine();
 
             //6. feladat
+            Console.WriteLine("4. feladat: 50000 felett keres");
             int db = 0;
             foreach (var item in tulajdonsag)
             {
